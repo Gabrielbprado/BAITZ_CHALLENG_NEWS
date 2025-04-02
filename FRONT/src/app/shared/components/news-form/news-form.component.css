@@ -1,0 +1,178 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  gap: 20px;
+}
+
+/* Estilo do formulário */
+.slide1 {
+  background-color: #2a2a2a;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  width: 50%;
+  position: relative;
+  max-height: 80vh;
+  overflow-y: auto;  /* Adiciona rolagem vertical */
+}
+
+/* Estilo do preview de notícias */
+.news-preview {
+  background-color: #333333;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  width: 45%;
+  max-height: 80vh;
+  overflow-y: auto;  /* Permite rolagem no preview */
+}
+
+.news-preview h1 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #e0e0e0;
+}
+
+.news-preview .news-author, .news-preview .news-introduction, .news-preview .news-description {
+  font-size: 1.1rem;
+  color: #c0c0c0;
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+
+.news-preview .content {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 2px solid #707070;
+}
+
+/* Preview da Imagem Principal */
+.news-preview .main-image-preview img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  filter: brightness(0.9);
+}
+
+/* Estilo dos Tópicos no Preview */
+.topics-preview {
+  margin-top: 20px;
+}
+
+.topics-preview .topic {
+  background-color: #444444;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  margin-bottom: 20px;
+}
+
+.topics-preview .topic img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-top: 10px;
+  filter: brightness(0.9);
+}
+
+.topics-preview .topic h3 {
+  color: #c0c0c0;
+  margin-bottom: 10px;
+  font-size: 1.4rem;
+}
+
+/* Estilos adicionais para inputs e labels */
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  color: #e0e0e0;
+  display: block;
+  margin-bottom: 8px;
+}
+
+input[type="text"], textarea, input[type="file"] + label {
+  width: 100%;
+  padding: 12px;
+  border-radius: 5px;
+  font-size: 1rem;
+  border: 1px solid #444444;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2);
+  background-color: #333333;
+  color: #e0e0e0;
+}
+
+input[type="text"]:focus, textarea:focus {
+  border-color: #707070;
+  box-shadow: 0 0 5px rgba(112, 112, 112, 0.3);
+  outline: none;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 150px;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+input[type="file"] + label {
+  display: inline-block;
+  padding: 12px 20px;
+  background-color: #444444;
+  color: #e0e0e0;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+input[type="file"] + label:hover {
+  background-color: #555555;
+}
+
+/* Botões */
+button {
+  background-color: #444444;
+  color: #e0e0e0;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  border: none;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #555555;
+}
+
+button[type="button"] {
+  background-color: #ab3636;
+}
+
+button[type="button"]:hover {
+  background-color: #c04040;
+}
+
+input[type="submit"] {
+  width: 100%;
+  background-color: #444444;
+  color: #e0e0e0;
+  padding: 15px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+  background-color: #555555;
+}
+
+

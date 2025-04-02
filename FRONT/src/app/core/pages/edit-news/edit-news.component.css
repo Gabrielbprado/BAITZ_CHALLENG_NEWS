@@ -1,0 +1,25 @@
+/* edit-news.component.css */
+.loading-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Ocupa a altura total da tela */
+  }
+  
+  .loading-text {
+    font-size: 24px; /* Tamanho do texto */
+    color: #333; /* Cor do texto */
+    font-weight: bold; /* Negrito */
+    animation: fadeIn 1.5s infinite; /* Animação de fadeIn */
+  }
+  
+  /* Animação de fadeIn */
+  @keyframes fadeIn {
+    0%, 100% {
+      opacity: 0.5; /* Opacidade inicial e final */
+    }
+    50% {
+      opacity: 1; /* Opacidade máxima */
+    }
+  }
+  

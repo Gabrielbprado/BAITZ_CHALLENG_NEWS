@@ -1,0 +1,247 @@
+.register-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #1a1a1a;
+    padding: 20px;
+}
+
+.register-card {
+    background-color: #2a2a2a;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    padding: 30px;
+    width: 100%;
+    max-width: 500px;
+}
+
+h2 {
+    color: #e0e0e0;
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 1.8rem;
+}
+
+.subtitle {
+    color: #b0b0b0;
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 0.9rem;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: #e0e0e0;
+    font-size: 0.9rem;
+}
+
+.input-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-container i {
+    position: absolute;
+    left: 12px;
+    color: #909090;
+}
+
+.input-container .password-toggle {
+    position: absolute;
+    right: 12px;
+    cursor: pointer;
+    color: #909090;
+}
+
+.input-container input {
+    width: 100%;
+    padding: 12px 12px 12px 35px;
+    border: 1px solid #444444;
+    border-radius: 6px;
+    background-color: #333333;
+    color: #e0e0e0;
+    font-size: 1rem;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.input-container input:focus {
+    outline: none;
+    border-color: #555555;
+    box-shadow: 0 0 0 2px rgba(85, 85, 85, 0.3);
+}
+
+.error-hint {
+    color: #ff6b6b;
+    font-size: 0.8rem;
+    margin-top: 5px;
+}
+
+.error-message {
+    color: #ff6b6b;
+    margin-bottom: 15px;
+    font-size: 0.9rem;
+    text-align: center;
+    padding: 8px;
+    background-color: rgba(255, 107, 107, 0.1);
+    border-radius: 4px;
+}
+
+/* Estilos para a força da senha */
+.password-strength-container {
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+.strength-bar-container {
+    height: 5px;
+    background-color: #444444;
+    border-radius: 3px;
+    margin-bottom: 5px;
+}
+
+.strength-bar {
+    height: 100%;
+    border-radius: 3px;
+    transition: width 0.3s ease, background-color 0.3s ease;
+}
+
+.strength-bar.weak {
+    background-color: #ff6b6b;
+}
+
+.strength-bar.medium {
+    background-color: #ffc107;
+}
+
+.strength-bar.good {
+    background-color: #4caf50;
+}
+
+.strength-bar.strong {
+    background-color: #2e7d32;
+}
+
+.strength-text {
+    font-size: 0.8rem;
+    display: block;
+    text-align: right;
+}
+
+.weak-text {
+    color: #ff6b6b;
+}
+
+.medium-text {
+    color: #ffc107;
+}
+
+.good-text {
+    color: #4caf50;
+}
+
+.strong-text {
+    color: #2e7d32;
+}
+
+/* Estilos para os requisitos de senha */
+.password-requirements {
+    background-color: #333333;
+    padding: 12px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+}
+
+.requirements-title {
+    color: #e0e0e0;
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+}
+
+.password-requirements ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.password-requirements li {
+    display: flex;
+    align-items: center;
+    color: #b0b0b0;
+    font-size: 0.85rem;
+    margin-bottom: 5px;
+}
+
+.password-requirements li.fulfilled {
+    color: #4caf50;
+}
+
+.password-requirements li i {
+    margin-right: 8px;
+    width: 16px;
+}
+
+.check-icon {
+    color: #4caf50;
+}
+
+.error-icon {
+    color: #ff6b6b;
+}
+
+.form-actions {
+    display: flex;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.register-btn, .cancel-btn {
+    padding: 12px 20px;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+    flex: 1;
+}
+
+.register-btn {
+    background-color: #2c5282;
+    color: #ffffff;
+    border: none;
+}
+
+.register-btn:hover:not(:disabled) {
+    background-color: #3a6ea5;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.register-btn:disabled {
+    background-color: #555555;
+    color: #909090;
+    cursor: not-allowed;
+}
+
+.cancel-btn {
+    background-color: #333333;
+    color: #e0e0e0;
+    border: 1px solid #444444;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cancel-btn:hover {
+    background-color: #444444;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}

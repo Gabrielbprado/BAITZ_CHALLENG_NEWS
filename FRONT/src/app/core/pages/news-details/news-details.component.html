@@ -1,0 +1,49 @@
+<div class="news-details-container">
+    <div class="news-details">
+        <h1>{{ news.title || 'Título da Notícia' }}</h1>
+        
+        <div class="news-meta-info">
+            <div class="date">{{ news.createdAt | date:'dd/MM/yyyy' }}</div>
+            <div class="read-time">5 min de leitura</div>
+        </div>
+
+        <div class="main-image-preview" *ngIf="news.imageUrl">
+            <img src="{{news.imageUrl}}" alt="Imagem Principal da Notícia">
+        </div>
+
+        <div>
+            <p class="news-author">
+                <strong>Por:</strong> {{ news.author }}
+            </p>
+            <p class="news-introduction" *ngIf="news.introduction && news.introduction !== 'null'">
+                <strong>Introdução:</strong> {{ news.introduction }}
+            </p>
+            <p class="news-description" *ngIf="news.description && news.description !== 'null'">
+                {{ news.description }}
+            </p>
+        </div>
+
+        <div class="content" *ngIf="news.content">
+            <p>{{ news.content }}</p>
+        </div>
+        
+        <div class="topics-preview" *ngFor="let topic of news.topics; let i = index;">
+            <div class="topic">
+                <h3>{{ topic.title || 'Tópico ' + (i + 1) }}</h3>
+                <p>{{ topic.description || 'Conteúdo do Tópico ' + (i + 1) }}</p>
+                <div *ngIf="topic.imageUrl && topic.imageUrl.length > 28">
+                    <img src="{{topic.imageUrl}}" alt="Imagem do Tópico {{ i + 1 }}">
+                </div>
+            </div>
+        </div>
+
+        <div class="buttons-container">
+            <button class="like-button" 
+                    [ngClass]="{'liked': liked, 'disliked': !liked}" 
+                    (click)="liked ? onDislike() : onLike()">
+                {{ liked ? 'Curtido' : 'Curtir' }}
+            </button>
+            <button class="back-button" [routerLink]="['/home']">Voltar</button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,42 @@
+<!-- HTML -->
+<div class="container">
+    <h1 class="header-title">Destaques</h1>
+
+    <div class="main-news" *ngIf="mainNews">
+        <div class="main-news-content">
+            <img src="http://localhost:5197/images{{mainNews?.imageUrl}}" alt="Main news image" class="main-news-image" [routerLink]="['/news-details', mainNews?.id]">
+            <div class="info">
+                <h3 class="main-news-title">{{ mainNews?.title }}</h3>
+                <div class="meta">
+                    <div class="author-section">
+                        <span class="author-icon">👤</span>
+                        <span class="author">{{ mainNews?.author }}</span>
+                    </div>
+                    <div class="date-section">
+                        <span class="date-icon">📅</span>
+                        <span class="date">{{ mainNews?.createdAt | date:'dd/MM/yyyy' }}</span>
+                    </div>
+                </div>
+                <p class="main-news-description">{{ mainNews?.introduction }}</p>
+                <a [routerLink]="['/news-details', mainNews?.id]" class="read-more">Leia mais</a>
+            </div>
+        </div>
+    </div>
+
+    <h1 class="latest-news-title">Últimas Notícias</h1>
+
+    <div *ngIf="isLoading" class="loading-container">
+        <div class="spinner"></div>
+        <p>Carregando notícias...</p>
+    </div>
+
+    <div *ngIf="!isLoading" class="news-container">
+        <app-news *ngFor="let news of paginatedNews" [news]="news"></app-news>
+    </div>
+
+    <div class="pagination" *ngIf="!isLoading && totalPages > 1">
+        <button class="pagination-btn prev" [disabled]="currentPage === 1" (click)="prevPage()">&larr; Anterior</button>
+        <span class="page-info">Página {{ currentPage }} de {{ totalPages }}</span>
+        <button class="pagination-btn next" [disabled]="currentPage === totalPages" (click)="nextPage()">Próximo &rarr;</button>
+    </div>
+</div>

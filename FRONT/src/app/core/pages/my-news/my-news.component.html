@@ -1,0 +1,17 @@
+
+<div class="noticia" *ngFor="let news of listNews">
+    <div class="titulo-noticia">{{news.title}}</div>
+    <div class="usuario-info">
+        <div class="user-details">
+            <div class="user-name">{{news.author}}</div>
+            <div class="user-date">{{news.createdAt}}</div>
+        </div>
+    </div>
+    <div class="lorem">
+        {{news.description}}
+    </div>
+    <div class="button-group">
+        <button (click)="editNews(news.id)" class="button-edit">Editar</button>
+        <button (click)="openDeleteConfirmation(news.id)" class="button-delete">Excluir</button>
+    </div>
+</div>

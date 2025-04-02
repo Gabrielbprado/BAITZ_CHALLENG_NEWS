@@ -1,0 +1,136 @@
+<div class="register-container">
+    <div class="register-card">
+        <h2>Adicionar Novo Colaborador</h2>
+        <p class="subtitle">Cadastre um novo colaborador para o portal de notícias</p>
+        
+        <form [formGroup]="registerForm" (ngSubmit)="register()">
+            <div class="form-group">
+                <label for="name">Nome</label>
+                <div class="input-container">
+                    <i class="fas fa-user"></i>
+                    <input 
+                        type="text" 
+                        id="name" 
+                        formControlName="name" 
+                        placeholder="Nome completo"
+                        required
+                    >
+                </div>
+                <div class="error-hint" *ngIf="registerForm.get('name')?.invalid && registerForm.get('name')?.touched">
+                    Nome é obrigatório
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="email">Email</label>
+                <div class="input-container">
+                    <i class="fas fa-envelope"></i>
+                    <input 
+                        type="email" 
+                        id="email" 
+                        formControlName="email" 
+                        placeholder="email@exemplo.com"
+                        required
+                    >
+                </div>
+                <div class="error-hint" *ngIf="registerForm.get('email')?.invalid && registerForm.get('email')?.touched">
+                    Email inválido
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="password">Senha</label>
+                <div class="input-container">
+                    <i class="fas fa-lock"></i>
+                    <input 
+                        [type]="showPassword ? 'text' : 'password'" 
+                        id="password" 
+                        formControlName="password" 
+                        placeholder="Senha"
+                        required
+                    >
+                    <i 
+                        [class]="showPassword ? 'fas fa-eye-slash password-toggle' : 'fas fa-eye password-toggle'" 
+                        (click)="togglePasswordVisibility()" 
+                        title="Mostrar/Ocultar senha"
+                    ></i>
+                </div>
+            </div>
+            
+            <!-- Indicador de força de senha -->
+            <div *ngIf="registerForm.get('password')?.value" class="password-strength-container" [@errorAnimation]>
+                <div class="strength-bar-container">
+                    <div class="strength-bar" [style.width.%]="passwordStrength" 
+                        [ngClass]="{
+                            'weak': passwordStrength < 30,
+                            'medium': passwordStrength >= 30 && passwordStrength < 60,
+                            'good': passwordStrength >= 60 && passwordStrength < 80,
+                            'strong': passwordStrength >= 80
+                        }">
+                    </div>
+                </div>
+                <span class="strength-text" 
+                    [ngClass]="{
+                        'weak-text': passwordStrength < 30,
+                        'medium-text': passwordStrength >= 30 && passwordStrength < 60,
+                        'good-text': passwordStrength >= 60 && passwordStrength < 80,
+                        'strong-text': passwordStrength >= 80
+                    }">
+                    {{ passwordMessage }}
+                </span>
+            </div>
+            
+            <!-- Requisitos de senha -->
+            <div *ngIf="registerForm.get('password')?.value" class="password-requirements" [@errorAnimation]>
+                <p class="requirements-title">Sua senha deve ter:</p>
+                <ul>
+                    <li [ngClass]="{'fulfilled': hasMinLength}">
+                        <i [class]="hasMinLength ? 'fas fa-check check-icon' : 'fas fa-times error-icon'"></i>
+                        Pelo menos 6 caracteres
+                    </li>
+                    <li [ngClass]="{'fulfilled': hasUpperCase}">
+                        <i [class]="hasUpperCase ? 'fas fa-check check-icon' : 'fas fa-times error-icon'"></i>
+                        Uma letra maiúscula
+                    </li>
+                    <li [ngClass]="{'fulfilled': hasLowerCase}">
+                        <i [class]="hasLowerCase ? 'fas fa-check check-icon' : 'fas fa-times error-icon'"></i>
+                        Uma letra minúscula
+                    </li>
+                    <li [ngClass]="{'fulfilled': hasSpecialChar}">
+                        <i [class]="hasSpecialChar ? 'fas fa-check check-icon' : 'fas fa-times error-icon'"></i>
+                        Um caractere especial
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="form-group">
+                <label for="confirmPassword">Confirmar Senha</label>
+                <div class="input-container">
+                    <i class="fas fa-lock"></i>
+                    <input 
+                        [type]="showPassword ? 'text' : 'password'" 
+                        id="confirmPassword" 
+                        formControlName="confirmPassword" 
+                        placeholder="Confirme a senha"
+                        required
+                    >
+                </div>
+            </div>
+            
+            <div class="error-message" *ngIf="errorMessage">
+                {{ errorMessage }}
+            </div>
+            
+            <div class="form-actions">
+                <button 
+                    type="submit" 
+                    class="register-btn" 
+                    [disabled]="registerForm.invalid || passwordStrength < 60"
+                >
+                    Cadastrar Colaborador
+                </button>
+                <a [routerLink]="['/profile']" class="cancel-btn">Cancelar</a>
+            </div>
+        </form>
+    </div>
+</div>

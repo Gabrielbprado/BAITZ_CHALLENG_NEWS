@@ -1,0 +1,19 @@
+<div class="news-card" (click)="OpenNotice()">
+    <div class="news-image-container">
+        <img src="{{news.imageUrl}}" alt="{{news.title}}" class="news-image">
+    </div>
+    <div class="news-content">
+        <h3 class="news-title">{{news.title}}</h3>
+        <div class="news-meta">
+            <div class="news-date">
+                <i class="icon-calendar"></i>
+                <span>{{news.createdAt}}</span>
+            </div>
+            <div class="news-author">
+                <i class="icon-user"></i>
+                <span>{{news.author}}</span>
+            </div>
+        </div>
+        <p class="news-excerpt">{{news.content.substring(0,100)}}{{news.content.length > 100 ? '...' : ''}}</p>
+    </div>
+</div>

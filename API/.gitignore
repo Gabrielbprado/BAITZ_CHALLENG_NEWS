@@ -1,0 +1,43 @@
+# Build results
+bin/
+obj/
+*.log
+*.user
+*.lock.json
+*.dbmdl
+*.suo
+*.cache
+*.pdb
+*.ilk
+*.idb
+
+# NuGet
+/packages/
+*.nupkg
+project.lock.json
+*.nuspec
+.nuget/
+
+# Rider
+riderModule.iml
+.idea/
+.vscode/
+_ReSharper.Caches/
+*.DotSettings.user
+
+# Visual Studio specific
+.vs/
+*.csproj.user
+*.sln.docstates
+
+# User-specific files
+*.rsuser
+*.suo
+*.user
+*.userosscache
+*.userprefs
+
+# Auto-generated files
+TestResults/
+build/src/Backend/AMS_News.API/appsettings*.json
+src/Backend/AMS_News.API/appsettings*.json

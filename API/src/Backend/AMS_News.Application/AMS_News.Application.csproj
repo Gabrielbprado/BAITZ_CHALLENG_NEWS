@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="AutoMapper" Version="13.0.1" />
+      <PackageReference Include="File.TypeChecker" Version="4.1.1" />
+      <PackageReference Include="FluentValidation" Version="11.10.0" />
+      <PackageReference Include="SQLitePCLRaw.bundle_e_sqlite3" Version="2.1.10" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\Shared\AMS_News.Communication\AMS_News.Communication.csproj" />
+      <ProjectReference Include="..\..\Shared\AMS_News.Exceptions\AMS_News.Exceptions.csproj" />
+      <ProjectReference Include="..\AMS_News.Domain\AMS_News.Domain.csproj" />
+    </ItemGroup>
+
+</Project>

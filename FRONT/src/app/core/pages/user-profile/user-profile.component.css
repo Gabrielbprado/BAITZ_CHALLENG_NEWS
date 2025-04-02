@@ -1,0 +1,153 @@
+/* Centraliza o container da tela de perfil */
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #1a1a1a;
+}
+
+/* Configurações gerais para a tela de perfil */
+.tela-de-perfil {
+    width: 600px;
+    padding: 20px;
+    border-radius: 20px;
+    background-color: #2a2a2a;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: Poppins, sans-serif;
+    color: #e0e0e0;
+}
+
+/* Estilo para o header com o botão de voltar */
+.header {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 20px;
+}
+
+.header a {
+    color: #e0e0e0;
+    text-decoration: none;
+    font-size: 24px;
+    transition: color 0.3s ease;
+}
+
+.header a:hover {
+    color: #c0c0c0;
+}
+
+/* Estilo para o container do perfil */
+.perfil-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.img-20240907-194546-1-icon {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #444444;
+    margin-bottom: 15px;
+}
+
+.ol-gabriel {
+    font-size: 24px;
+    font-weight: 600;
+    color: #e0e0e0;
+}
+
+/* Estilo para a seção de opções */
+.section {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.rectangle-div {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    background-color: #333333;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    color: #e0e0e0;
+}
+
+.rectangle-div:hover {
+    background-color: #444444;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.rectangle-div .material-icons {
+    margin-right: 15px;
+    font-size: 24px;
+}
+
+.rectangle-div .material-icons:last-child {
+    margin-right: 0;
+    margin-left: auto;
+}
+
+.dados-pessoais, .noticias, .colaborador {
+    flex: 1;
+    font-size: 16px;
+}
+
+/* Estilo para o botão de colaborador */
+.rectangle-div .colaborador {
+    color: #e0e0e0;
+}
+
+/* Estilo para os botões de ação */
+.botoes {
+    display: flex;
+    justify-content: center;
+}
+
+.botao {
+    width: 100px;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.sair {
+    background-color: #333333;
+    border: 2px solid #444444;
+    color: #e0e0e0;
+}
+
+.sair:hover {
+    background-color: #444444;
+    transform: translateY(-2px);
+}
+
+/* Ícones */
+.users-icon, .folder-icon, .trash-icon, .chevron-right-icon, .chevron-right-icon1 {
+    width: 32px;
+    height: 32px;
+    color: #c0c0c0;
+}
+
+.excluir {
+    background-color: #ab3636;
+    color: #fff;
+}
+
+.excluir:hover {
+    background-color: #c04040;
+}

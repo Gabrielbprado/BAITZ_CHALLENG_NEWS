@@ -1,0 +1,59 @@
+.modal-title {
+    text-align: center;
+    font-size: 24px;
+    color: #ff6b6b; /* Cor do título */
+    margin-bottom: 16px; /* Espaçamento abaixo do título */
+}
+  
+.modal-content {
+    text-align: center;
+    font-size: 16px;
+    color: #e0e0e0; /* Cor do texto */
+    background-color: #333333;
+    padding: 20px;
+    border-radius: 8px;
+}
+  
+.warning-text {
+    color: #ff6b6b; /* Cor de alerta */
+    font-weight: bold;
+    margin-top: 8px; /* Espaçamento acima do texto de aviso */
+}
+  
+.modal-actions {
+    justify-content: center; /* Centraliza os botões */
+    margin-top: 16px; /* Espaçamento acima dos botões */
+    display: flex;
+    gap: 10px;
+}
+  
+.cancel-button {
+    margin-right: 12px; /* Espaçamento à direita do botão cancelar */
+    background-color: #444444; /* Cor de fundo para o botão cancelar */
+    color: #e0e0e0; /* Cor do texto */
+    border-radius: 4px; /* Bordas arredondadas */
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.cancel-button:hover {
+    background-color: #555555;
+}
+  
+button.mat-raised-button {
+    min-width: 100px; /* Largura mínima para o botão de exclusão */
+    border-radius: 4px; /* Bordas arredondadas */
+    background-color: #ab3636;
+    color: #ffffff;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button.mat-raised-button:hover {
+    background-color: #c04040;
+}
+  

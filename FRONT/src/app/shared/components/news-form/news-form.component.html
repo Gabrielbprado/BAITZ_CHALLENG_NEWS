@@ -1,0 +1,74 @@
+<div class="container">
+  <div class="slide1">
+    <h1>{{ isEditing ? 'Editar Notícia' : 'Criar Notícia' }}</h1>
+    <form [formGroup]="newsForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="title">Título</label>
+        <input type="text" id="title" formControlName="title" placeholder="Digite o título da notícia">
+      </div>
+      <div class="form-group">
+        <label for="description">Descrição</label>
+        <textarea id="description" formControlName="description" placeholder="Digite a descrição da notícia"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="content">Conteúdo</label>
+        <textarea id="content" formControlName="content" placeholder="Digite o conteúdo da notícia"></textarea>
+      </div>
+      <div class="form-group file-upload-group">
+        <label for="mainImage">Imagem Principal</label>
+        <input type="file" id="mainImage" (change)="onFileChange($event, 'mainImage')">
+        <label for="mainImage">Selecionar Imagem</label>
+      </div>
+      <div class="form-group">
+        <label for="introduction">Introdução</label>
+        <textarea id="introduction" formControlName="introduction" placeholder="Digite a Introdução da notícia"></textarea>
+      </div>
+      <div formArrayName="topics" class="topics-container">
+        <div *ngFor="let topic of topics.controls; let i = index;" [formGroupName]="i" class="form-group">
+            <label for="topicTitle{{i}}">Título do Tópico {{i + 1}}</label>
+            <input type="text" id="topicTitle{{i}}" formControlName="topicTitle" placeholder="Digite o título do tópico {{i + 1}}">
+            
+            <label for="topicContent{{i}}">Conteúdo do Tópico {{i + 1}}</label>
+            <textarea id="topicContent{{i}}" formControlName="topicContent" placeholder="Digite o conteúdo do tópico {{i + 1}}"></textarea>
+            
+            <div class="form-group file-upload-group">
+                <label for="topicImage{{i}}">Imagem do Tópico {{i + 1}}</label>
+                <input type="file" id="topicImage{{i}}" (change)="onFileChange($event, i)">
+                <label for="topicImage{{i}}">Selecionar Imagem</label>
+            </div>
+            <button type="button" (click)="removeTopic(i)">Remover Tópico</button>
+        </div>
+    </div>
+      <button type="button" (click)="addTopic()">Adicionar Tópico</button>
+      <input type="submit" [value]="isEditing ? 'Atualizar' : 'Cadastrar'">
+    </form>
+  </div>
+
+  <div class="news-preview">
+    <h1>{{ newsForm.get('title')?.value || 'Título da Notícia' }}</h1>
+
+    <div class="content">
+      <p>{{ newsForm.get('content')?.value || 'Conteúdo da notícia' }}</p>
+    </div>
+
+    <div class="main-image-preview" *ngIf="mainImagePreview">
+      <img [src]="mainImagePreview" alt="Imagem Principal da Notícia">
+    </div>
+
+    <p class="news-author"><strong>Autor:</strong> {{ newsForm.get('author')?.value || 'Nome do autor' }}</p>
+    <p class="news-introduction"><strong>Introdução:</strong> {{ newsForm.get('introduction')?.value || 'Introdução da notícia' }}</p>
+    <p class="news-description"><strong>Descrição:</strong> {{ newsForm.get('description')?.value || 'Descrição da notícia' }}</p>
+
+    <div class="topics-preview" *ngFor="let topic of topics.controls; let i = index;">
+      <div class="topic">
+        <h3>Título do Tópico {{ i + 1 }}: {{ topic.get('topicTitle')?.value || 'Tópico ' + (i + 1) }}</h3>
+        <p>{{ topic.get('topicContent')?.value || 'Conteúdo do Tópico ' + (i + 1) }}</p>
+        <div *ngIf="getTopicImagePreview(i)">
+          <img [src]="getTopicImagePreview(i)" alt="Imagem do Tópico {{ i + 1 }}">
+        </div>
+      </div>
+    </div>
+
+   
+  </div>
+</div>

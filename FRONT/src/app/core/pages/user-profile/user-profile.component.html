@@ -1,0 +1,60 @@
+<div class="container">
+    <div class="tela-de-perfil">
+        <div class="header">
+            <a class="material-icons" [routerLink]="['/home']">
+                arrow_back
+                </a>
+        </div>
+
+        <div class="perfil-container">
+            <img class="img-20240907-194546-1-icon" alt="" src="images/user.jpg">
+            <div class="ol-gabriel">Olá, {{user.name}}</div>
+        </div>
+
+        <div class="section">
+            <div class="rectangle-div">
+                <span class="material-icons">
+                    group
+                    </span>
+                <div class="dados-pessoais">Dados Pessoais</div>
+                <span class="material-icons">
+                    chevron_right
+                    </span>
+            </div>
+
+            <a class="rectangle-div" [routerLink]="['/my-news']">
+                <span class="material-icons">
+                    newspaper
+                    </span>
+                <div class="noticias">Minhas Notícias</div>
+                <span class="material-icons">
+                    chevron_right
+                    </span>
+            </a>
+
+            <a class="rectangle-div" [routerLink]="['/register']">
+                <span class="material-icons">
+                    person_add
+                </span>
+                <div class="colaborador">Adicionar Colaborador</div>
+                <span class="material-icons">
+                    chevron_right
+                </span>
+            </a>
+
+            <a class="rectangle-div" (click)="logOut()">
+                <span class="material-icons">
+                    delete
+                    </span>
+                <div >Sair</div>
+                <span class="material-icons" >
+                    logout
+                    </span>
+            </a>
+        </div>
+
+        <div class="botoes">
+            <a class="botao sair" [routerLink]="['/home']" >Cancelar</a>
+        </div>
+    </div>
+</div>
